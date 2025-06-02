@@ -1,0 +1,22 @@
+[
+  {
+    "id": "q1",
+    "text": "Was ist 2 + 2?",
+    "correctAnswerId": "b",
+    "answers": [
+      { "id": "a", "text": "3" },
+      { "id": "b", "text": "4" },
+      { "id": "c", "text": "5" }
+    ]
+  },
+  {
+    "id": "q2",
+    "text": "Welche Farbe hat der Himmel?",
+    "correctAnswerId": "b",
+    "answers": [
+      { "id": "a", "text": "Grün" },
+      { "id": "b", "text": "Blau" },
+      { "id": "c", "text": "Rot" }
+    ]
+  }
+]
