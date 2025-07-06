@@ -4,9 +4,18 @@
     "text": "Was ist 2 + 2?",
     "correctAnswerId": "b",
     "answers": [
-      { "id": "a", "text": "3" },
-      { "id": "b", "text": "4" },
-      { "id": "c", "text": "5" }
+      {
+        "id": "a",
+        "text": "3"
+      },
+      {
+        "id": "b",
+        "text": "4"
+      },
+      {
+        "id": "c",
+        "text": "5"
+      }
     ]
   },
   {
@@ -14,9 +23,113 @@
     "text": "Welche Farbe hat der Himmel?",
     "correctAnswerId": "b",
     "answers": [
-      { "id": "a", "text": "Grün" },
-      { "id": "b", "text": "Blau" },
-      { "id": "c", "text": "Rot" }
+      {
+        "id": "a",
+        "text": "Grün"
+      },
+      {
+        "id": "b",
+        "text": "Blau"
+      },
+      {
+        "id": "c",
+        "text": "Rot"
+      }
+    ]
+  },
+  {
+    "id": "q3",
+    "text": "Wie viele Kontinente gibt es auf der Erde?",
+    "correctAnswerId": "a",
+    "answers": [
+      {
+        "id": "a",
+        "text": "7"
+      },
+      {
+        "id": "b",
+        "text": "5"
+      },
+      {
+        "id": "c",
+        "text": "6"
+      }
+    ]
+  },
+  {
+    "id": "q4",
+    "text": "Wer schrieb 'Faust'?",
+    "correctAnswerId": "b",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Friedrich Schiller"
+      },
+      {
+        "id": "b",
+        "text": "Johann Wolfgang von Goethe"
+      },
+      {
+        "id": "c",
+        "text": "Heinrich Heine"
+      }
+    ]
+  },
+  {
+    "id": "q5",
+    "text": "Was ist die Hauptstadt von Frankreich?",
+    "correctAnswerId": "c",
+    "answers": [
+      {
+        "id": "a",
+        "text": "London"
+      },
+      {
+        "id": "b",
+        "text": "Berlin"
+      },
+      {
+        "id": "c",
+        "text": "Paris"
+      }
+    ]
+  },
+  {
+    "id": "q6",
+    "text": "Welches Element hat das chemische Symbol 'O'?",
+    "correctAnswerId": "a",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Sauerstoff"
+      },
+      {
+        "id": "b",
+        "text": "Gold"
+      },
+      {
+        "id": "c",
+        "text": "Silber"
+      }
+    ]
+  },
+  {
+    "id": "q7",
+    "text": "Wie viele Minuten hat eine Stunde?",
+    "correctAnswerId": "b",
+    "answers": [
+      {
+        "id": "a",
+        "text": "30"
+      },
+      {
+        "id": "b",
+        "text": "60"
+      },
+      {
+        "id": "c",
+        "text": "90"
+      }
     ]
   }
 ]
