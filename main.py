@@ -36,7 +36,7 @@ def start_quiz():
 def submit_answer(session_id: str, payload: AnswerInput):
     session = sessions.get(session_id)
     if not session:
-        raise HTTPException(status_code=404, detail="Session not found")
+        raise HTTPException(status_code=404, detail="SESSION_NOT_FOUND")
 
     question = next((q for q in session.questions if q.id == payload.questionId), None)
     if question is None:
@@ -51,7 +51,7 @@ def submit_answer(session_id: str, payload: AnswerInput):
 def get_result(session_id: str):
     session = sessions.get(session_id)
     if not session:
-        raise HTTPException(status_code=404, detail="Session not found")
+        raise HTTPException(status_code=404, detail="SESSION_NOT_FOUND")
     # Mapping von questionId zu answerId aus answerInputs
     answers = {a.questionId: a.answerId for a in getattr(session, "answerInputs", [])}
     score = sum(
@@ -61,6 +61,6 @@ def get_result(session_id: str):
     return {
         "score": score,
         "total": len(session.questions),
-        "correctAnswers": {q.id: q.correctAnswerId for q in session.questions}
+        "correctAnswers": [{"questionId": q.id, "answerId": q.correctAnswerId} for q in session.questions]
     }
 
