@@ -44,7 +44,17 @@ def submit_answer(session_id: str, payload: AnswerInput):
 
     if not hasattr(session, "answerInputs") or session.answerInputs is None:
         session.answerInputs = []
-    session.answerInputs.append(payload)
+    # Antwort speichern oder aktualisieren
+    existing = next((a for a in session.answerInputs if a.questionId == payload.questionId), None)
+    if existing:
+        existing.answerId = payload.answerId
+    else:
+        session.answerInputs.append(payload)
+    
+    # add small delay to simulate processing time
+    import time
+    time.sleep(0.3)
+
     return {"correct": payload.answerId == question.correctAnswerId}
 
 @app.get("/quiz/{session_id}/result")
@@ -54,13 +64,9 @@ def get_result(session_id: str):
         raise HTTPException(status_code=404, detail="SESSION_NOT_FOUND")
     # Mapping von questionId zu answerId aus answerInputs
     answers = {a.questionId: a.answerId for a in getattr(session, "answerInputs", [])}
-    score = sum(
-        1 for q in session.questions
-        if answers.get(q.id) == q.correctAnswerId
-    )
+    score = sum(1 for q in session.questions if answers.get(q.id) == q.correctAnswerId)
     return {
         "score": score,
         "total": len(session.questions),
         "correctAnswers": [{"questionId": q.id, "answerId": q.correctAnswerId} for q in session.questions]
     }
-
